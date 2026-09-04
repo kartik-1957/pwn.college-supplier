@@ -180,11 +180,11 @@ hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/de
 ---
 
 # Challenge 7: ***Touching files***
-> ......
+> generating a new file
 
 
 ## Solve:
-
+- 
 
 ## Flag:
 
