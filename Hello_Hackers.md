@@ -12,6 +12,7 @@ ___
 - Firstly used the `whoami` command
 - Then typed `hello` command
 - made sure it is all in lowercase (linux commands are case sensitve)
+  
 
 The command needed for the challenge is-
 
@@ -33,7 +34,7 @@ pwn.college{YTNGc_OqxOaEtWHPWDTt4buffHD.QX3YjM1wiM3EzNwIzW}
 ## References:
 - https://pwn.college/linux-luminarium
 - https://bash.cyberciti.biz/guide/Main_Page
-- www.google.com
+- Search engines
 ---
 
 # Challenge 2: ***Intro to argumentss***
@@ -42,7 +43,10 @@ pwn.college{YTNGc_OqxOaEtWHPWDTt4buffHD.QX3YjM1wiM3EzNwIzW}
 
 ## Solve:
 - Got to know about using arguments
-- passed an additional `hackers` argument with the initial `hello` argument
+- passed an additional `hackers` argument with the initial `hello` argument\
+
+
+
 
 The command needed for the challenge is-
 ```
@@ -60,7 +64,7 @@ hacker@hello~intro-to-arguments:~$ hello hackers
 ## References:
 - https://pwn.college/linux-luminarium
 - https://bash.cyberciti.biz/guide/Main_Page
-- www.google.com
+- Search engines
 
 ---
 
@@ -71,7 +75,8 @@ hacker@hello~intro-to-arguments:~$ hello hackers
 ## Solve:
 - Got to know that terminal keeps a history of previosly typed commands
 - Using up arrow key for previous commands and down arrow key for navigating to next commands
-- The flag was already present in the form of a previously typed command...
+- The flag was already present in the form of a previously typed command...\
+
 
 No command was needed as such, just pressing the up arrow key got the key
 ```
@@ -89,7 +94,7 @@ hacker@hello~command-history:~$ {flag given}
 ## References:
 - https://pwn.college/linux-luminarium
 - https://bash.cyberciti.biz/guide/Main_Page
-- www.google.com
+- Search engines
 
 ---
 
