@@ -19,7 +19,6 @@ BOOM!!!
 ## Flag:
 ```
 pwn.college{EZafTw8u34W23AODZi4b-Q-2JDl.QX4cTO0wiM3EzNwIzW}
-hacker@paths~the-root:~$
 ```
 
 ## Concepts learnt:
