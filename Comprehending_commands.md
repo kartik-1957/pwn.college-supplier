@@ -91,16 +91,26 @@ hacker@commands~more-catting-practice:~$ cat /usr/include/netipx/flag
  > searching (grepping) a particular content from a file
 
 ## Solve:
-
-
+- Tried catting the file directly, but a string of many words was read
+- Used the `grep` command and searched the keyword `pwn.college` to find the key amongst the text file
+- Captured the flag..
+The code for the challenge is-
+```
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ cat /challenge/data.txt
+{a list of random words was displayed}
+hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
+{flag captured}
+```
 
 ## Flag:
 
-
+`pwn.college{o2U_CHTrF42k5dn_5GIjrBQq6XD.QX3EDO0wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-
+- Grepping a specific keyword in a file
+- Useful when we need to find a specific item in a file
+- grep prints all the items in a file containing the specific keyword
 
 
 ## References:
@@ -111,18 +121,32 @@ hacker@commands~more-catting-practice:~$ cat /usr/include/netipx/flag
 ---
 
 # Challenge 5: ***Comparing files***
-> ......
+> Finding changes between similar files
 
 
 ## Solve:
-
-
+- First used the `cat` command to check what the files contained
+- First file had all fake flags and second one had one real amongst fake
+- Then used the `diff` command to find the difference between the files
+- This showed the real flag as the difference between the files
+The command for the challenge is-
+```
+hacker@commands~comparing-files:~$ cat /challenge/decoys_only.txt
+{a list of fake flags displayed}
+hacker@commands~comparing-files:~$ cat /challenge/decoys_and_real.txt
+{a list of fake and a real flag was displayed}
+hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt
+19a20
+{flag captured}
+```
 ## Flag:
 
-
+`pwn.college{QeH2FeHK-fa-OF7zoKfkPwHKre6.01MwMDOxwiM3EzNwIzW}`
 
 ## Concepts learnt:
-
+- Learnt how to find the differences between files
+- `diff` command lists all the changes or differences between the files
+- It also displays the line where the change was observed, and also the type of change (like insertion or deletion)
 
 
 ## References:
@@ -133,10 +157,11 @@ hacker@commands~more-catting-practice:~$ cat /usr/include/netipx/flag
 ---
 
 # Challenge 6: ***listing files***
-> ......
+> listing all files in a directory
 
 
 ## Solve:
+-
 
 
 ## Flag:
