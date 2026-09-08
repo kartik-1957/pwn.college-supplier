@@ -344,6 +344,119 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 
 
 ## Solve:
+- The instructions told us that the flag is amongst the stderror of the program
+- ran the program, then redirected the stderr to stdout using `>&` operator
+- used the `|` operator to run command and grep the flag simultaneously
+
+The commands for the challenge is-
+```
+hacker@piping~grepping-errors:~$ /challenge/run 2>& 1 | grep pwn.college
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge checks for a specific process at the other end of stderr : grep
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stderr to another process. Checking...
+[TEST] Performing checks on that process!
+
+[INFO] The process' executable is /nix/store/sacz532zgiacvg7mva9v6gbfmyw427i3-gnugrep-3.12/bin/grep.
+[INFO] This might be different than expected because of symbolic links (for example, from /usr/bin/python to /usr/bin/python3 to /usr/bin/python3.8).
+[INFO] To pass the checks, the executable must be grep.
+
+[PASS] You have passed the checks on the process on the other end of my stderr!
+[PASS] Success! You have satisfied all execution requirements.
+{flag captured}
+```
+## Flag:
+`pwn.college{EowysFRbP0Edgng-Urfr7QXxj2o.QX1ATO0wiM3EzNwIzW}`
+
+
+## Concepts learnt:
+- Conversion of one type of file descriptor to another
+- using the `>&` operator
+- grepping standard errors directly without catting
+
+
+## References:
+- https://pwn.college/linux-luminarium
+- https://bash.cyberciti.biz/guide/Main_Page
+- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
+
+---
+
+
+# Challenge 9: ***Filtering with grep -v***
+> Using invert match option
+
+
+## Solve:
+- We were asked to invert match and filter out all decoy flags
+- used the argument `-v` with the `grep` command to filter out the decoy flag
+- the real flag got printed
+
+The commands for the challenge is-
+```
+hacker@piping~filtering-with-grep-v:~$ /challenge/run | grep -v DECOY
+{flag captured}
+```
+
+## Flag:
+`pwn.college{M7TLJDm-DmzruLKtbS1UID4saNB.0FOxEzNxwiM3EzNwIzW}`
+
+
+## Concepts learnt:
+- The concept of invert match
+- using `-v` argument for invert matching
+- useful when we need to filter out data
+
+
+## References:
+- https://pwn.college/linux-luminarium
+- https://bash.cyberciti.biz/guide/Main_Page
+- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
+
+---
+
+# Challenge 10: ***Filtering with sed***
+> Filtering out unnecessary data using `sed` command
+
+
+## Solve:
+- The instructions told us that the `/challenge/run` command has garbage data in it in between the flag
+- Used the `sed` command with the argument `/s/FAKEFLAG//g`
+- The flag got printed as output
+
+The command for the challenge is-
+```
+hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
+{flag captured}
+```
+
+## Flag:
+`pwn.college{EKwTqzYvAqfm74Bwwr9EdF6Fl55.01NxQTMywiM3EzNwIzW}`
+
+
+## Concepts learnt:
+- Using the `sed` command to filter out data
+- It is used with the argument `/s/keyword/keyword/g`
+
+
+## References:
+- https://pwn.college/linux-luminarium
+- https://bash.cyberciti.biz/guide/Main_Page
+- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
+
+---
+
+# Challenge 11: ***Duplicating piped data with tee***
+> duplicating the output to multiple files
+
+
+## Solve:
 - 
 
 ## Flag:
@@ -361,8 +474,7 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 
 ---
 
-
-# Challenge 9: ***Tab completion on command***
+# Challenge 12: ***process substitution for input***
 > 
 
 
@@ -384,7 +496,7 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 
 ---
 
-# Challenge 10: ***Tab completion on command***
+# Challenge 13: ***writing to multiple programs***
 > 
 
 
@@ -406,7 +518,7 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 
 ---
 
-# Challenge 11: ***Tab completion on command***
+# Challenge 14: ***split piping stderr and stdout***
 > 
 
 
@@ -428,73 +540,7 @@ hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
 
 ---
 
-# Challenge 12: ***Tab completion on command***
-> 
-
-
-## Solve:
-- 
-
-## Flag:
-`
-
-
-## Concepts learnt:
-- 
-
-
-## References:
-- https://pwn.college/linux-luminarium
-- https://bash.cyberciti.biz/guide/Main_Page
-- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
-
----
-
-# Challenge 13: ***Tab completion on command***
-> 
-
-
-## Solve:
-- 
-
-## Flag:
-`
-
-
-## Concepts learnt:
-- 
-
-
-## References:
-- https://pwn.college/linux-luminarium
-- https://bash.cyberciti.biz/guide/Main_Page
-- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
-
----
-
-# Challenge 14: ***Tab completion on command***
-> 
-
-
-## Solve:
-- 
-
-## Flag:
-`
-
-
-## Concepts learnt:
-- 
-
-
-## References:
-- https://pwn.college/linux-luminarium
-- https://bash.cyberciti.biz/guide/Main_Page
-- https://web.archive.org/web/20220629044814/http://bencane.com:80/2012/04/16/unix-shell-the-art-of-io-redirection/
-
----
-
-# Challenge 15: ***Tab completion on command***
+# Challenge 15: ***Named pipes***
 > 
 
 
