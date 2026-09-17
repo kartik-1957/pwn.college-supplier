@@ -457,14 +457,33 @@ hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
 
 
 ## Solve:
-- 
+- the challenge asked us to tee the output to a file first
+- did so and catted the file
+- got the secret code ran it and got the flag
 
+the commands for the challenge is-
+```
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | tee file1 | /challenge/college
+Processing...
+catThe input to 'college' does not contain the correct secret code! This code 
+should be provided by the 'pwn' command. HINT: use 'tee' to save the first 
+attempt to a file, inspect the saved output, and then retry the pipeline with 
+what you learned.
+hacker@piping~duplicating-piped-data-with-tee:~$ cat file1
+Usage: /challenge/pwn --secret [SECRET_ARG]
+
+SECRET_ARG should be "Ugi5eTfl"
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret [Ugi5eTf1] | /challenge/college
+Processing...
+{flag captured}
+```
 ## Flag:
-`
+`pwn.college{EKwTqzYvAqfm74Bwwr9EdF6Fl55.01NxQTMywiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- Using the `tee` command
+- useful whn we have to check the output of file
 
 
 ## References:
@@ -475,18 +494,27 @@ hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
 ---
 
 # Challenge 12: ***process substitution for input***
-> 
+> using the `diff` command for substituting
 
 
 ## Solve:
-- 
+- challenge asked us to use command to seperate real flag from decoys
+- did so using `diff` command
+- captured the flag
 
+the commands for the challenge is-
+```
+hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+53a54
+> {flag captured}
+```
 ## Flag:
-`
+`pwn.college{M_J_vslTY3PgxxFYsEiDUt0cL7g.0lNwMDOxwiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using `diff command`
+- helpful when we have to find out a certain file
 
 
 ## References:
@@ -497,18 +525,31 @@ hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
 ---
 
 # Challenge 13: ***writing to multiple programs***
-> 
+> wrting to multiple files at once
 
 
 ## Solve:
-- 
+- the challenge asked us to `tee` output to more than one files
+- did so using the `>()` operators
+- got the flag
+
+the commands for the challenge is-
+```
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) >(/challenge/planet)
+This secret data must directly and simultaneously make it to /challenge/the and 
+/challenge/planet. Don't try to copy-paste it; it changes too fast.
+235092979636648259
+Congratulations, you have duplicated data into the input of two programs! Here 
+is your flag:
+pwn.college{ca318NvcDZ7kFe3q5Dn-lo49OTo.QXwgDN1wiM3EzNwIzW}
+```
 
 ## Flag:
-`
+`pwn.college{ca318NvcDZ7kFe3q5Dn-lo49OTo.QXwgDN1wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using `tee` command on multiple files
 
 
 ## References:
@@ -519,18 +560,29 @@ hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
 ---
 
 # Challenge 14: ***split piping stderr and stdout***
-> 
+> using stderr and stdout while piping
 
 
 ## Solve:
-- 
+- challenge asked us to pipe the stderror
+- (bonus challenge- not using | operator)
+- did so using the standard redirection operators along with stderr operator `2>`
+
+the command for the challenge is-
+```
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack > >(/challenge/planet) 2> >(/challenge/the)
+Congratulations, you have learned a redirection technique that even experts 
+struggle with! Here is your flag:
+{flag captured}
+```
 
 ## Flag:
-`
+`pwn.college{Ak2i9mLcS5Pj161oZDpkYyfqaZu.QXxQDM2wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using piping on stderr
+- helpful when redirecting errors to a file
 
 
 ## References:
@@ -541,18 +593,18 @@ hacker@piping~filtering-with-sed:~$ /challenge/run | sed s/FAKEFLAG//g
 ---
 
 # Challenge 15: ***Named pipes***
-> 
+> naming a pipe
 
 
 ## Solve:
-- 
+- unable to complete challenge because of fifo restrictions...
 
 ## Flag:
-`
+`could not capture`
 
 
 ## Concepts learnt:
-- 
+- concept of fifo (first byte in first out)
 
 
 ## References:
