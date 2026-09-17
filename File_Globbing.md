@@ -169,14 +169,17 @@ You got it! Here is your flag!
 
 
 ## Solve:
-- 
+- we were asked to find the required files from a given number of vast amount of files
+- did so by finding a pattern and using file globbing
+- got the flag
 
 ## Flag:
-`
+`pwn.college{M7nHAKwWymfzaHzdFvDJvZQUnSB.QX2IDO0wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using globbing to find files
+- useful when multiple conditions are to be applied to find or run files
 
 
 ## References:
@@ -187,18 +190,33 @@ You got it! Here is your flag!
 ---
 
 # Challenge 7: ***Exclusionary glob***
-> 
+> filtering files while globbing
 
 
 ## Solve:
-- 
+- we were asked to run only the files not starting with p,w and n
+- did so using `!` character with `[]` glob
+- successfully got the flag
+
+
+The command for the challenge is-
+```
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ ls
+amazing    challenging  educational  great  incredible  kind      magical  optimistic  queenly  splendid   uplifting   wonderful  youthful
+beautiful  delightful   fantastic    happy  jovial      laughing  nice     pwning      radiant  thrilling  victorious  xenial     zesty
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [!pwn]*
+You got it! Here is your flag!
+{flag captured}
+```
 
 ## Flag:
-`
+`pwn.college{M7nHAKwWymfzaHzdFvDJvZQUnSB.QX2IDO0wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using exclusionary glob `!`
+- matching with files not starting with a particular charector
 
 
 ## References:
@@ -209,18 +227,26 @@ You got it! Here is your flag!
 ---
 
 # Challenge 8: ***Tab completion***
-> 
+> using autocomplete feature
 
 
 ## Solve:
-- 
+- challenge asked us to use the autocomplete tab feature to fetch the file
+- did so by catting
+- got the flag
 
+the command for the challenge is-
+```
+hacker@globbing~tab-completion:~$ cat /challenge/pwncollege​
+{flag captured}
+```
 ## Flag:
-`
+`pwn.college{I_yKqhNYkgLXR0Jkwy2mY_7iwvv.0FN0EzNxwiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- the `tab` key is used for autocomplete
+- useful when we dont exactly know file name
 
 
 ## References:
@@ -231,18 +257,34 @@ You got it! Here is your flag!
 ---
 
 # Challenge 9: ***Multiple options for tab completion***
-> 
+> seeing various options with tab completion
 
 
 ## Solve:
-- 
+- the challenge told us to use tab completion to get a list of all available options
+- did so and got the print of all files
+- catted the flag file and got the flag
+
+the command for the challenge is-
+```
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwn
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwn
+pwn                    pwn-the-planet         pwncollege-flag        pwncollege-flyswatter  
+pwn-college            pwncollege-family      pwncollege-flamingo    pwncollege-hacking         
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwn-college
+No flag in this file!
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwncollege-flag
+{flag captured}
+```
 
 ## Flag:
-`
+`pwn.college{QNXhobdqNh0mkmM4MAh_sBQg25n.0lN0EzNxwiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-- 
+- using tab completion when multiple options available
+- it prints all available options
 
 
 ## References:
@@ -253,18 +295,19 @@ You got it! Here is your flag!
 ---
 
 # Challenge 10: ***Tab completion on command***
-> 
+> using tab completion on commands
 
 
 ## Solve:
-- 
+- unable to complete challenge.. tab key could not autocomplete the command
 
 ## Flag:
-`
+`unable to get`
 
 
 ## Concepts learnt:
-- 
+- using tab to autocomplete commands
+- helpful when we dont know the name of file
 
 
 ## References:
