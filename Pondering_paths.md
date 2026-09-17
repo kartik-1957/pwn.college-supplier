@@ -236,17 +236,28 @@ Correct!!!
 > Learning the applications of relative path in detail
 
 ## Solve:
+- The challenge requires us to run the file in relative by first changing to `challenge` directory
+- then used the `./run` command to run implicitly
+- successfully got the flag
 
-
-
+The commands for the challenge is-
+```
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+{flag captured}
+```
 
 
 ## Flag:
-
+`pwn.college{ULwLtmY8gIDamqse4gEveKV_4lO.QXxUTN0wiM3EzNwIzW}`
 
 
 ## Concepts learnt:
-
+- invoking a file via relative path
+- happens as a case of safety in linux
 
 
 ## References:
@@ -255,20 +266,31 @@ Correct!!!
 ---
 
 # Challenge 8: ***home sweet home***
-> ...
+> finding more about paths in detail
 
 ## Solve:
+- The challenge asked us to pass the absolute path as an argument to `/challenge/run`
+- additional conditions- we need it to be 3 or less charectors
+- did so and got the flag
 
-
+the commands for the challenge is-
+```
+hacker@paths~home-sweet-home:~$ touch f
+hacker@paths~home-sweet-home:~$ /challenge/run ~/f
+Writing the file to /home/hacker/f!
+... and reading it back to you:
+{flag captured}
+```
 
 
 ## Flag:
-
+`pwn.college{Yusqw-OQr6q0LSVnOjE2eA6-_oY.QXzMDO0wiM3EzNwIzW}`
 
 
 
 ## Concepts learnt:
-
+- concepts of relative file path and file paths in general
+- using file paths as argument
 
 
 
